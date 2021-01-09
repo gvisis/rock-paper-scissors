@@ -29,7 +29,6 @@ public class RockPaperScissors {
             myChoiceNumber = sc.nextInt();
             compChoiceNumber = (int) (Math.random() * 3) + 1;
 
-
             while (myChoiceNumber > 3) {
                 System.out.print("=========================\n");
                 System.out.printf("Selected number ( %d ) cannot be greater than 3.\n", myChoiceNumber);
@@ -48,12 +47,12 @@ public class RockPaperScissors {
                 System.out.printf("- Total games computer won: %d\n", compTotalWins);
                 System.out.printf("- Total ties: %d\n", totalTies);
                 System.out.println("======================");
-                System.out.printf("- You chose Rock: %d times ( %d%% )\n", myTotalRocks, (choicePercentage(myTotalRocks, totalGames)));
-                System.out.printf("- You chose Paper: %d times ( %d%% )\n", myTotalPaper, (choicePercentage(myTotalPaper, totalGames)));
-                System.out.printf("- You chose Scissors: %d times ( %d%% )\n", myTotalScissors, (choicePercentage(myTotalScissors, totalGames)));
-                System.out.printf("\n- Computer chose Rock: %d times ( %d%% )\n", compTotalRocks, (choicePercentage(compTotalRocks, totalGames)));
-                System.out.printf("- Computer chose Paper: %d times ( %d%% )\n", compTotalPaper, (choicePercentage(compTotalPaper, totalGames)));
-                System.out.printf("- Computer chose Scissors: %d times ( %d%% )\n", compTotalScissors, (choicePercentage(compTotalScissors, totalGames)));
+                System.out.printf("- You chose Rock: %d times ( %d%% )\n", myTotalRocks, choicePercentage(myTotalRocks, totalGames));
+                System.out.printf("- You chose Paper: %d times ( %d%% )\n", myTotalPaper, choicePercentage(myTotalPaper, totalGames));
+                System.out.printf("- You chose Scissors: %d times ( %d%% )\n", myTotalScissors, choicePercentage(myTotalScissors, totalGames));
+                System.out.printf("\n- Computer chose Rock: %d times ( %d%% )\n", compTotalRocks, choicePercentage(compTotalRocks, totalGames));
+                System.out.printf("- Computer chose Paper: %d times ( %d%% )\n", compTotalPaper, choicePercentage(compTotalPaper, totalGames));
+                System.out.printf("- Computer chose Scissors: %d times ( %d%% )\n", compTotalScissors, choicePercentage(compTotalScissors, totalGames));
                 System.out.println("\nThanks for playing! \u00a9 gvisis");
                 return;
             }
@@ -103,6 +102,7 @@ public class RockPaperScissors {
     static int choicePercentage(int choiceNumber, int games) {
         double percentage = Math.round((double) choiceNumber / games * 100);
         return (int) percentage;
+
     }
 }
 
